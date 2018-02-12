@@ -14,18 +14,18 @@ import { StackNavigator } from 'react-navigation';
 
 EStyleSheet.build();
 
-export default class LaylaDARSH extends React.Component {
+export default class LaylaHammer extends React.Component {
   static navigationOptions = {
-    title: 'DARSH',
+    title: 'Hammer',
   };
   constructor(props) {
     super(props);
   imgClick = () => {
     Alert.alert(
-  'Column 1 Base D20 roll \n\nColumn 2 D20 \n + 13|13|13|11 \n Deadly Aim/Rapid Shot/Haste \n\n Column 3 \n Arrow Damge + 14',
+  'Column 1 Base D20 roll \n\nColumn 2 D20 \n + 13|8 \n ',
   'Enjoy!',
   [
-    {text: 'T20 = Total D20 Roll includes DARSH', onPress: () => console.log('D20 Roll Total')},
+    {text: 'T20 = Total D20 Roll', onPress: () => console.log('D20 Roll Total')},
     {text: 'Cancel',onPress: () => console.log('Cancel Pressed'),style: 'cancel'}
   ],
   { cancelable: false }
@@ -37,16 +37,10 @@ export default class LaylaDARSH extends React.Component {
       // This is our Display number value, prior to button press
       NumberHolderD20S1 : 'B20',
       NumberHolderD20S2 : 'B20',
-      NumberHolderD20S3 : 'B20',
-      NumberHolderD20S4 : 'B20',
       NumberHolderD8S1 : 'D8',
       NumberHolderD8S2 : 'D8',
-      NumberHolderD8S3 : 'D8',
-      NumberHolderD8S4 : 'D8',
       NumberHolderTotalD20S1 : 'T20',
       NumberHolderTotalD20S2 : 'T20',
-      NumberHolderTotalD20S3 : 'T20',
-      NumberHolderTotalD20S4 : 'T20',
     }
   }
 
@@ -57,31 +51,19 @@ export default class LaylaDARSH extends React.Component {
   handleButtonPress=()=> {
     let D20S1 = this.rollA20();
     let D20S2 = this.rollA20();
-    let D20S3 = this.rollA20();
-    let D20S4 = this.rollA20();
     let D20TotalS1 = D20S1 + 13 ;
-    let D20TotalS2 = D20S2 + 13 ;
-    let D20TotalS3 = D20S3 + 13 ;
-    let D20TotalS4 = D20S4 + 11 ;
-    let D8S1 = Math.floor(Math.random()  * 8) +15;
-    let D8S2 = Math.floor(Math.random()  * 8) +15;
-    let D8S3 = Math.floor(Math.random()  * 8) +15;
-    let D8S4 = Math.floor(Math.random()  * 8) +15;
+    let D20TotalS2 = D20S2 + 8 ;
+    let D8S1 = Math.floor(Math.random()  * 8) +5;
+    let D8S2 = Math.floor(Math.random()  * 8) +5;
 
   this.setState({
 
     NumberHolderD20S1 : D20S1,
     NumberHolderD20S2 : D20S2,
-    NumberHolderD20S3 : D20S3,
-    NumberHolderD20S4 : D20S4,
     NumberHolderTotalD20S1 : D20TotalS1,
     NumberHolderTotalD20S2 : D20TotalS2,
-    NumberHolderTotalD20S3 : D20TotalS3,
-    NumberHolderTotalD20S4 : D20TotalS4,
     NumberHolderD8S1 : D8S1,
     NumberHolderD8S2 : D8S2,
-    NumberHolderD8S3 : D8S3,
-    NumberHolderD8S4 : D8S4,
     })
   }
 
@@ -89,15 +71,13 @@ export default class LaylaDARSH extends React.Component {
     const { navigate } = this.props.navigation;
     const D20S1Style = this.state.NumberHolderD20S1 === 20 | this.state.NumberHolderD20S1 === 1 ? styles.bottomItemInner20picked : styles.bottomItemInner20;
     const D20S2Style = this.state.NumberHolderD20S2 === 20 | this.state.NumberHolderD20S2 === 1 ? styles.bottomItemInner20picked : styles.bottomItemInner20;
-    const D20S3Style = this.state.NumberHolderD20S3 === 20 | this.state.NumberHolderD20S3 === 1 ? styles.bottomItemInner20picked : styles.bottomItemInner20;
-    const D20S4Style = this.state.NumberHolderD20S4 === 20 | this.state.NumberHolderD20S4 === 1 ? styles.bottomItemInner20picked : styles.bottomItemInner20;
     return (
        <View style={styles.archer1}>
           <View style={styles.top1}>
             <TouchableOpacity onPress={imgClick} style={styles.profileimage}>
               <Image
                 style={styles.image}
-                source={require('../images/archer.jpg')}
+                source={require('../images/hammer.jpg')}
               />
             </TouchableOpacity>
           </View>
@@ -170,66 +150,6 @@ export default class LaylaDARSH extends React.Component {
               <Text style={styles.bottomItemInner8} adjustsFontSizeToFit
                 numberOfLines={1}>{this.state.NumberHolderD8S2}</Text>
             </Animatable.View>
-
-            <Animatable.View
-              animation="bounce"
-              easing="ease-in"
-              iterationCount={5}
-              style={styles.bottomItem}>
-              <Text style={D20S3Style} adjustsFontSizeToFit
-                numberOfLines={1}>{this.state.NumberHolderD20S3}</Text>
-            </Animatable.View>
-
-            <Animatable.View
-              animation="tada"
-              easing="ease-in"
-              iterationCount={5}
-              style={styles.bottomItemTotal}>
-              <Animatable.Text
-                animation="zoomInUp"
-                style={styles.bottomItemInnerTotalD20}
-                adjustsFontSizeToFit
-                numberOfLines={1}>{this.state.NumberHolderTotalD20S3}</Animatable.Text>
-            </Animatable.View>
-
-            <Animatable.View
-              animation="bounce"
-              easing="ease-out"
-              iterationCount={5}
-              style={styles.bottomItem}>
-              <Text style={styles.bottomItemInner8} adjustsFontSizeToFit
-                numberOfLines={1}>{this.state.NumberHolderD8S3}</Text>
-            </Animatable.View>
-
-            <Animatable.View
-              animation="bounce"
-              easing="ease-in"
-              iterationCount={5}
-              style={styles.bottomItem}>
-              <Text style={D20S4Style} adjustsFontSizeToFit
-                numberOfLines={1}>{this.state.NumberHolderD20S4}</Text>
-            </Animatable.View>
-
-            <Animatable.View
-              animation="tada"
-              easing="ease-in"
-              iterationCount={5}
-              style={styles.bottomItemTotal}>
-              <Animatable.Text
-                animation="zoomInUp"
-                style={styles.bottomItemInnerTotalD20}
-                adjustsFontSizeToFit
-                numberOfLines={1}>{this.state.NumberHolderTotalD20S4}</Animatable.Text>
-            </Animatable.View>
-
-            <Animatable.View
-              animation="bounce"
-              easing="ease-out"
-              iterationCount={5}
-              style={styles.bottomItem}>
-              <Text style={styles.bottomItemInner8} adjustsFontSizeToFit
-                numberOfLines={1}>{this.state.NumberHolderD8S4}</Text>
-            </Animatable.View>
           </View>
       </View>
     );
@@ -237,6 +157,18 @@ export default class LaylaDARSH extends React.Component {
 }
 
 const styles = StyleSheet.create({
+    bottomItemInner20picked: {
+      flex: 1,
+      backgroundColor: 'red',
+      borderColor: '#444054',
+      borderWidth: 2,
+      justifyContent: 'center',
+      alignItems: 'center',
+      textAlign: 'center',
+      fontSize: 45,
+      fontWeight: '900',
+      color: 'white',
+    },
     container: {
       flex: 1,
       flexDirection: 'row',
@@ -246,6 +178,20 @@ const styles = StyleSheet.create({
       justifyContent: 'center',
       alignItems: 'center',
       alignSelf: 'center',
+    },
+    homeContainer: {
+      flex: 1,
+      flexDirection: 'row',
+      flexWrap: 'wrap',
+      backgroundColor: '#F65BE3',
+      alignContent: 'center',
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
+    logo: {
+      height: '33%',
+      width: '33%',
+      padding: 2,
     },
     archer1: {
       flex: 1,
@@ -276,6 +222,13 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       justifyContent: 'center',
       backgroundColor: '#F0C808',
+    },
+    checkboxParent: {
+      flexDirection: 'row',
+      flexWrap: 'wrap',
+      justifyContent: 'center',
+      alignItems: 'center',
+      alignContent: 'center',
     },
     profileimage: {
       width: 140,
@@ -355,18 +308,6 @@ const styles = StyleSheet.create({
       fontWeight: '900',
       color: '#129490',
     },
-    bottomItemInner20picked: {
-      flex: 1,
-      backgroundColor: 'red',
-      borderColor: '#444054',
-      borderWidth: 2,
-      justifyContent: 'center',
-      alignItems: 'center',
-      textAlign: 'center',
-      fontSize: 45,
-      fontWeight: '900',
-      color: 'white',
-    },
     bottomItemInner8: {
       flex: 1,
       backgroundColor: 'white',
@@ -402,5 +343,10 @@ const styles = StyleSheet.create({
       fontSize: 45,
       fontWeight: '900',
       color: '#fff8dc',
+    },
+    logo1: {
+      backgroundColor: '#065143',
+      alignItems: 'center',
+      justifyContent: 'center',
     },
 });
