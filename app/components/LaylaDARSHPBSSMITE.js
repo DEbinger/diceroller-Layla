@@ -5,7 +5,8 @@ import {
   View,
   Image,
   Alert,
-  TouchableOpacity
+  TouchableOpacity,
+  Dimensions,
        } from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
 import { Button } from './Button';
@@ -16,7 +17,7 @@ EStyleSheet.build();
 
 export default class LaylaDARSHPBSSMITE extends React.Component {
   static navigationOptions = {
-    title: 'DARSHPBSMITE',
+    title: '17|17|17|15 +23',
   };
   constructor(props) {
     super(props);
@@ -235,18 +236,6 @@ export default class LaylaDARSHPBSSMITE extends React.Component {
 }
 
 const styles = StyleSheet.create({
-    bottomItemInner20picked: {
-      flex: 1,
-      backgroundColor: 'red',
-      borderColor: '#444054',
-      borderWidth: 2,
-      justifyContent: 'center',
-      alignItems: 'center',
-      textAlign: 'center',
-      fontSize: 45,
-      fontWeight: '900',
-      color: 'white',
-    },
     container: {
       flex: 1,
       flexDirection: 'row',
@@ -256,20 +245,6 @@ const styles = StyleSheet.create({
       justifyContent: 'center',
       alignItems: 'center',
       alignSelf: 'center',
-    },
-    homeContainer: {
-      flex: 1,
-      flexDirection: 'row',
-      flexWrap: 'wrap',
-      backgroundColor: '#F65BE3',
-      alignContent: 'center',
-      justifyContent: 'center',
-      alignItems: 'center',
-    },
-    logo: {
-      height: '33%',
-      width: '33%',
-      padding: 2,
     },
     archer1: {
       flex: 1,
@@ -284,33 +259,38 @@ const styles = StyleSheet.create({
       backgroundColor: '#F0C808',
     },
     top1: {
-      height: '45%',
+      height: '33%',
       alignItems: 'center',
       justifyContent: 'center',
       backgroundColor: '#065143',
+      flex: 1,
+      flexDirection: 'row',
+      flexWrap: 'wrap',
+      padding: 2,
     },
     top2: {
-      height: '45%',
+      height: '33%',
       alignItems: 'center',
       justifyContent: 'center',
       backgroundColor: '#D8FFDD',
+      flex: 1,
+      flexDirection: 'row',
+      flexWrap: 'wrap',
+      padding: 2,
     },
     top3: {
-      height: '45%',
+      height: '33%',
       alignItems: 'center',
       justifyContent: 'center',
       backgroundColor: '#F0C808',
-    },
-    checkboxParent: {
+      flex: 1,
       flexDirection: 'row',
       flexWrap: 'wrap',
-      justifyContent: 'center',
-      alignItems: 'center',
-      alignContent: 'center',
+      padding: 2,
     },
     profileimage: {
-      width: 140,
-      height: 200,
+      width: 100,
+      height: 175,
       borderWidth: 4,
       borderColor: '#fff',
       backgroundColor: '#fff',
@@ -344,35 +324,44 @@ const styles = StyleSheet.create({
       alignItems: 'center',
     },
     bottom1: {
-      height: '33%',
+      height: '57%',
       backgroundColor: '#065143',
       flexDirection: 'row',
       flexWrap: 'wrap',
       padding: 2,
+      justifyContent: 'center',
+      alignContent: 'center',
+      alignItems: 'center',
     },
     bottom2: {
-      height: '33%',
+      height: '57%',
       backgroundColor: '#D8FFDD',
       flexDirection: 'row',
       flexWrap: 'wrap',
       padding: 2,
+      justifyContent: 'center',
+      alignContent: 'center',
+      alignItems: 'center',
     },
     bottom3: {
-      height: '33%',
+      height: '57%',
       backgroundColor: '#F0C808',
       flexDirection: 'row',
       flexWrap: 'wrap',
       padding: 2,
+      justifyContent: 'center',
+      alignContent: 'center',
+      alignItems: 'center',
     },
     bottomItem: {
-      width: '33%',
-      height: '33%',
-      padding: 5,
+      width: Dimensions.get('window').width / 3 -6,
+      height: 75,
+      padding: 5
     },
     bottomItemTotal: {
-      width: '33%',
-      height: '33%',
-      padding: 5,
+      width: Dimensions.get('window').width / 3 -6,
+      height: 75,
+      padding: 5
     },
     bottomItemInner20: {
       flex: 1,
@@ -385,6 +374,18 @@ const styles = StyleSheet.create({
       fontSize: 45,
       fontWeight: '900',
       color: '#129490',
+    },
+    bottomItemInner20picked: {
+      flex: 1,
+      backgroundColor: 'red',
+      borderColor: '#444054',
+      borderWidth: 2,
+      justifyContent: 'center',
+      alignItems: 'center',
+      textAlign: 'center',
+      fontSize: 45,
+      fontWeight: '900',
+      color: 'white',
     },
     bottomItemInner8: {
       flex: 1,
@@ -421,10 +422,5 @@ const styles = StyleSheet.create({
       fontSize: 45,
       fontWeight: '900',
       color: '#fff8dc',
-    },
-    logo1: {
-      backgroundColor: '#065143',
-      alignItems: 'center',
-      justifyContent: 'center',
     },
 });

@@ -5,7 +5,8 @@ import {
   View,
   Image,
   Alert,
-  TouchableOpacity
+  TouchableOpacity,
+  Dimensions,
        } from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
 import { Button } from './Button';
@@ -16,13 +17,13 @@ EStyleSheet.build();
 
 export default class LaylaDARSH extends React.Component {
   static navigationOptions = {
-    title: 'DARSH',
+    title: '13|13|13|11 +14',
   };
   constructor(props) {
     super(props);
   imgClick = () => {
     Alert.alert(
-  'Column 1 Base D20 roll \n\nColumn 2 D20 \n + 13|13|13|11 \n Deadly Aim/Rapid Shot/Haste \n\n Column 3 \n Arrow Damge + 14',
+  'Column 1 Base D20 roll \n\nColumn 2 D20 \n + 13|13|13|11 \n Deadly Aim/Rapid Shot/Haste \n\n Column 3 \n Arrow Damage + 14',
   'Enjoy!',
   [
     {text: 'T20 = Total D20 Roll includes DARSH', onPress: () => console.log('D20 Roll Total')},
@@ -260,26 +261,38 @@ const styles = StyleSheet.create({
       backgroundColor: '#F0C808',
     },
     top1: {
-      height: '45%',
+      height: '33%',
       alignItems: 'center',
       justifyContent: 'center',
       backgroundColor: '#065143',
+      flex: 1,
+      flexDirection: 'row',
+      flexWrap: 'wrap',
+      padding: 2,
     },
     top2: {
-      height: '45%',
+      height: '33%',
       alignItems: 'center',
       justifyContent: 'center',
       backgroundColor: '#D8FFDD',
+      flex: 1,
+      flexDirection: 'row',
+      flexWrap: 'wrap',
+      padding: 2,
     },
     top3: {
-      height: '45%',
+      height: '33%',
       alignItems: 'center',
       justifyContent: 'center',
       backgroundColor: '#F0C808',
+      flex: 1,
+      flexDirection: 'row',
+      flexWrap: 'wrap',
+      padding: 2,
     },
     profileimage: {
-      width: 140,
-      height: 200,
+      width: 100,
+      height: 175,
       borderWidth: 4,
       borderColor: '#fff',
       backgroundColor: '#fff',
@@ -313,35 +326,44 @@ const styles = StyleSheet.create({
       alignItems: 'center',
     },
     bottom1: {
-      height: '33%',
+      height: '57%',
       backgroundColor: '#065143',
       flexDirection: 'row',
       flexWrap: 'wrap',
       padding: 2,
+      justifyContent: 'center',
+      alignContent: 'center',
+      alignItems: 'center',
     },
     bottom2: {
-      height: '33%',
+      height: '57%',
       backgroundColor: '#D8FFDD',
       flexDirection: 'row',
       flexWrap: 'wrap',
       padding: 2,
+      justifyContent: 'center',
+      alignContent: 'center',
+      alignItems: 'center',
     },
     bottom3: {
-      height: '33%',
+      height: '57%',
       backgroundColor: '#F0C808',
       flexDirection: 'row',
       flexWrap: 'wrap',
       padding: 2,
+      justifyContent: 'center',
+      alignContent: 'center',
+      alignItems: 'center',
     },
     bottomItem: {
-      width: '33%',
-      height: '33%',
-      padding: 5,
+      width: Dimensions.get('window').width / 3 -6,
+      height: 75,
+      padding: 5
     },
     bottomItemTotal: {
-      width: '33%',
-      height: '33%',
-      padding: 5,
+      width: Dimensions.get('window').width / 3 -6,
+      height: 75,
+      padding: 5
     },
     bottomItemInner20: {
       flex: 1,

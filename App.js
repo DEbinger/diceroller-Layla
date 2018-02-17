@@ -5,7 +5,8 @@ import {
   View,
   Image,
   Alert,
-  TouchableOpacity
+  TouchableOpacity,
+  ScrollView,
        } from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
 import { Button } from './app/components/Button';
@@ -25,7 +26,6 @@ class LogoTitle1 extends React.Component {
     return (
       <Image style={styles.logo}
         source={require('./app/images/archer.jpg')}
-        style={{ width: 100, height: 150 }}
       />
     );
   }
@@ -36,7 +36,6 @@ class LogoTitle2 extends React.Component {
     return (
       <Image style={styles.logo}
         source={require('./app/images/archer2.jpg')}
-        style={{ width: 100, height: 150 }}
       />
     );
   }
@@ -47,7 +46,6 @@ class LogoTitle3 extends React.Component {
     return (
       <Image style={styles.logo}
         source={require('./app/images/archer3.jpg')}
-        style={{ width: 100, height: 150 }}
       />
     );
   }
@@ -58,7 +56,6 @@ class LogoTitle4 extends React.Component {
     return (
       <Image style={styles.logo}
         source={require('./app/images/hammer.jpg')}
-        style={{ width: 100, height: 150 }}
       />
     );
   }
@@ -69,8 +66,7 @@ class LogoTitle5 extends React.Component {
     return (
       <Image style={styles.logo}
         source={require('./app/images/hammer2.jpg')}
-        style={{ width: 100, height: 150 }}
-      />
+       />
     );
   }
 }
@@ -80,7 +76,6 @@ class LogoTitle6 extends React.Component {
     return (
       <Image style={styles.logo}
         source={require('./app/images/hammer3.jpg')}
-        style={{ width: 100, height: 150 }}
       />
     );
   }
@@ -93,25 +88,27 @@ class HomeScreen extends React.Component {
   render (){
     const { navigate } = this.props.navigation;
     return (
-      <View style={styles.homeContainer}>
-        <Text
-          onPress= { ()=> navigate('LaylaDARSH')} style={styles.onpress1} > {"\n"}DARSH{"\n"}{"\n"}{"\n"}{"\n"} <LogoTitle1 />
-        </Text>
-        <Text
-          onPress= { ()=> navigate('LaylaDARSHPBS')}> {"\n"}DARSH{"\n"}PBS{"\n"}{"\n"}{"\n"} <LogoTitle2 />
-        </Text>
-        <Text
-          onPress= { ()=> navigate('LaylaDARSHPBSSMITE')}> {"\n"}DARSH{"\n"}PBS{"\n"}SMITE{"\n"}{"\n"} <LogoTitle3 />
-        </Text>
-        <Text
-          onPress= { ()=> navigate('LaylaHammer')}> {"\n"}HAMMER{"\n"}{"\n"}{"\n"}{"\n"} <LogoTitle4 />
-        </Text>
-        <Text
-          onPress= { ()=> navigate('LaylaHammerHS')}> {"\n"}HAMMER{"\n"}HS{"\n"}{"\n"}{"\n"} <LogoTitle5 />
-        </Text>
-        <Text
-          onPress= { ()=> navigate('LaylaHammerHSSmite')}> {"\n"}HAMMER{"\n"}HS{"\n"}SMITE{"\n"}{"\n"} <LogoTitle6 />
-        </Text>
+      <View style={styles.container}>
+        <ScrollView style={styles.homeContainer}>
+          <Text
+            onPress= { ()=> navigate('LaylaDARSH')} style={styles.onpress1} > {"\n"}DARSH{"\n"}{"\n"}{"\n"}{"\n"} <LogoTitle1 />
+          </Text>
+          <Text
+            onPress= { ()=> navigate('LaylaDARSHPBS')}> {"\n"}DARSH{"\n"}PBS{"\n"}{"\n"}{"\n"} <LogoTitle2 />
+          </Text>
+          <Text
+            onPress= { ()=> navigate('LaylaDARSHPBSSMITE')}> {"\n"}DARSH{"\n"}PBS{"\n"}SMITE{"\n"}{"\n"} <LogoTitle3 />
+          </Text>
+          <Text
+            onPress= { ()=> navigate('LaylaHammer')}> {"\n"}HAMMER{"\n"}{"\n"}{"\n"}{"\n"} <LogoTitle4 />
+          </Text>
+          <Text
+            onPress= { ()=> navigate('LaylaHammerHS')}> {"\n"}HAMMER{"\n"}HS{"\n"}{"\n"}{"\n"} <LogoTitle5 />
+          </Text>
+          <Text
+            onPress= { ()=> navigate('LaylaHammerHSSmite')}> {"\n"}HAMMER{"\n"}HS{"\n"}SMITE{"\n"}{"\n"} <LogoTitle6 />
+          </Text>
+        </ScrollView>
       </View>
     )
   }
@@ -146,18 +143,26 @@ export default class App extends React.Component {
 }
 
 const styles = StyleSheet.create({
-    homeContainer: {
+    container: {
       flex: 1,
-      flexDirection: 'row',
+      flexDirection: 'column',
       flexWrap: 'wrap',
       backgroundColor: '#F65BE3',
       alignContent: 'center',
-      justifyContent: 'center',
-      alignItems: 'center',
+      padding: 5,
+    },
+    homeContainer: {
+      flex: 1,
+      flexDirection: 'column',
+      flexWrap: 'wrap',
+      backgroundColor: '#F65BE3',
+      alignContent: 'center',
+      alignSelf: 'center',
+      padding: 5,
     },
     logo: {
-      height: '33%',
-      width: '33%',
-      padding: 2,
+      marginTop: 5,
+      width: 350,
+      height: 500,
     },
 });
