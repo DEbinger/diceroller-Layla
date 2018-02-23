@@ -7,6 +7,7 @@ import {
   Alert,
   TouchableOpacity,
   Dimensions,
+  ImageBackground,
        } from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
 import { Button } from './Button';
@@ -17,21 +18,22 @@ EStyleSheet.build();
 
 export default class LaylaDARSH extends React.Component {
   static navigationOptions = {
-    title: '13|13|13|11 +14',
+    title: '14|14|14|9 +14',
   };
   constructor(props) {
     super(props);
-  imgClick = () => {
-    Alert.alert(
-  'Column 1 Base D20 roll \n\nColumn 2 D20 \n + 13|13|13|11 \n Deadly Aim/Rapid Shot/Haste \n\n Column 3 \n Arrow Damage + 14',
-  'Enjoy!',
-  [
-    {text: 'T20 = Total D20 Roll includes DARSH', onPress: () => console.log('D20 Roll Total')},
-    {text: 'Cancel',onPress: () => console.log('Cancel Pressed'),style: 'cancel'}
-  ],
-  { cancelable: false }
-)
-  }
+
+//   imgClick = () => {
+//     Alert.alert(
+//   'Column 1 Base D20 roll \n\nColumn 2 D20 \n + 14|14|14|9 \n Deadly Aim/Rapid Shot/Haste \n\n Column 3 \n Arrow Damage + 14',
+//   'Enjoy!',
+//   [
+//     {text: 'T20 = Total D20 Roll includes DARSH', onPress: () => console.log('D20 Roll Total')},
+//     {text: 'Cancel',onPress: () => console.log('Cancel Pressed'),style: 'cancel'}
+//   ],
+//   { cancelable: false }
+// )
+//   }
 
     this.state={
 
@@ -60,10 +62,10 @@ export default class LaylaDARSH extends React.Component {
     let D20S2 = this.rollA20();
     let D20S3 = this.rollA20();
     let D20S4 = this.rollA20();
-    let D20TotalS1 = D20S1 + 13 ;
-    let D20TotalS2 = D20S2 + 13 ;
-    let D20TotalS3 = D20S3 + 13 ;
-    let D20TotalS4 = D20S4 + 11 ;
+    let D20TotalS1 = D20S1 + 14;
+    let D20TotalS2 = D20S2 + 14;
+    let D20TotalS3 = D20S3 + 14;
+    let D20TotalS4 = D20S4 + 9;
     let D8S1 = Math.floor(Math.random()  * 8) +15;
     let D8S2 = Math.floor(Math.random()  * 8) +15;
     let D8S3 = Math.floor(Math.random()  * 8) +15;
@@ -93,15 +95,7 @@ export default class LaylaDARSH extends React.Component {
     const D20S3Style = this.state.NumberHolderD20S3 === 20 | this.state.NumberHolderD20S3 === 1 ? styles.bottomItemInner20picked : styles.bottomItemInner20;
     const D20S4Style = this.state.NumberHolderD20S4 === 20 | this.state.NumberHolderD20S4 === 1 ? styles.bottomItemInner20picked : styles.bottomItemInner20;
     return (
-       <View style={styles.archer1}>
-          <View style={styles.top1}>
-            <TouchableOpacity onPress={imgClick} style={styles.profileimage}>
-              <Image
-                style={styles.image}
-                source={require('../images/archer.jpg')}
-              />
-            </TouchableOpacity>
-          </View>
+       <ImageBackground source={require('../images/archer.jpg')} style={styles.container}>
 
           <Animatable.View ref="view"
             style={styles.center1} >
@@ -232,7 +226,7 @@ export default class LaylaDARSH extends React.Component {
                 numberOfLines={1}>{this.state.NumberHolderD8S4}</Text>
             </Animatable.View>
           </View>
-      </View>
+      </ImageBackground>
     );
   }
 }
@@ -240,13 +234,8 @@ export default class LaylaDARSH extends React.Component {
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      flexDirection: 'row',
       flexWrap: 'wrap',
-      backgroundColor: '#F65BE3',
-      alignContent: 'center',
-      justifyContent: 'center',
       alignItems: 'center',
-      alignSelf: 'center',
     },
     archer1: {
       flex: 1,
@@ -305,29 +294,29 @@ const styles = StyleSheet.create({
       maxWidth: '100%',
     },
     center1: {
-      height: '10%',
-      backgroundColor: '#065143',
+      height: '40%',
+      // backgroundColor: '#065143',
       justifyContent: 'center',
       alignContent: 'center',
       alignItems: 'center',
     },
     center2: {
-      height: '10%',
-      backgroundColor: '#D8FFDD',
+      height: '20%',
+      // backgroundColor: '#D8FFDD',
       justifyContent: 'center',
       alignContent: 'center',
       alignItems: 'center',
     },
     center3: {
-      height: '10%',
-      backgroundColor: '#F0C808',
+      height: '20%',
+      // backgroundColor: '#F0C808',
       justifyContent: 'center',
       alignContent: 'center',
       alignItems: 'center',
     },
     bottom1: {
       height: '57%',
-      backgroundColor: '#065143',
+      // backgroundColor: '#065143',
       flexDirection: 'row',
       flexWrap: 'wrap',
       padding: 2,
@@ -337,7 +326,7 @@ const styles = StyleSheet.create({
     },
     bottom2: {
       height: '57%',
-      backgroundColor: '#D8FFDD',
+      // backgroundColor: '#D8FFDD',
       flexDirection: 'row',
       flexWrap: 'wrap',
       padding: 2,
@@ -347,7 +336,7 @@ const styles = StyleSheet.create({
     },
     bottom3: {
       height: '57%',
-      backgroundColor: '#F0C808',
+      // backgroundColor: '#F0C808',
       flexDirection: 'row',
       flexWrap: 'wrap',
       padding: 2,

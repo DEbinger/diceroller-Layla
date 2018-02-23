@@ -7,6 +7,7 @@ import {
   Alert,
   TouchableOpacity,
   Dimensions,
+  ImageBackground,
        } from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
 import { Button } from './Button';
@@ -17,13 +18,13 @@ EStyleSheet.build();
 
 export default class LaylaDARSHPBSSMITE extends React.Component {
   static navigationOptions = {
-    title: '17|17|17|15 +23',
+    title: '17|17|17|12 +24',
   };
   constructor(props) {
     super(props);
   imgClick = () => {
     Alert.alert(
-  'Column 1 Base D20 roll \n \nColumn 2 D20 \n + 17|17|17|15 \n Deadly Aim/Rapid Shot/Haste/Point Blank Shot \n Smite \n\n Column 3 \nArrow Damge + 23',
+  'Column 1 Base D20 roll \n \nColumn 2 D20 \n + 17|17|17|12 \n Deadly Aim/Rapid Shot/Haste/Point Blank Shot \n Smite \n\n Column 3 \nArrow Damge + 24',
   'Enjoy!',
   [
     {text: 'T20 = Total D20 Roll includes DARSHPBSSMITE', onPress: () => console.log('D20 Roll Total')},
@@ -56,14 +57,14 @@ export default class LaylaDARSHPBSSMITE extends React.Component {
     let D20S2 = Math.floor(Math.random() * 20) + 1;
     let D20S3 = Math.floor(Math.random() * 20) + 1;
     let D20S4 = Math.floor(Math.random() * 20) + 1;
-    let D20TotalS1 = D20S1 + 17 ;
-    let D20TotalS2 = D20S2 + 17 ;
-    let D20TotalS3 = D20S3 + 17 ;
-    let D20TotalS4 = D20S4 + 15 ;
-    let D8S1 = Math.floor(Math.random()  * 8) +24;
-    let D8S2 = Math.floor(Math.random()  * 8) +24;
-    let D8S3 = Math.floor(Math.random()  * 8) +24;
-    let D8S4 = Math.floor(Math.random()  * 8) +24;
+    let D20TotalS1 = D20S1 + 17;
+    let D20TotalS2 = D20S2 + 17;
+    let D20TotalS3 = D20S3 + 17;
+    let D20TotalS4 = D20S4 + 12;
+    let D8S1 = Math.floor(Math.random()  * 8) +25;
+    let D8S2 = Math.floor(Math.random()  * 8) +25;
+    let D8S3 = Math.floor(Math.random()  * 8) +25;
+    let D8S4 = Math.floor(Math.random()  * 8) +25;
 
 
   this.setState({
@@ -91,15 +92,7 @@ export default class LaylaDARSHPBSSMITE extends React.Component {
     const D20S3Style = this.state.NumberHolderD20S3 === 20 | this.state.NumberHolderD20S3 === 1 ? styles.bottomItemInner20picked : styles.bottomItemInner20;
     const D20S4Style = this.state.NumberHolderD20S4 === 20 | this.state.NumberHolderD20S4 === 1 ? styles.bottomItemInner20picked : styles.bottomItemInner20;
     return (
-       <View style={styles.archer3}>
-          <View style={styles.top3}>
-            <TouchableOpacity onPress={imgClick} style={styles.profileimage}>
-              <Image
-                style={styles.image}
-                source={require('../images/archer3.jpg')}
-              />
-            </TouchableOpacity>
-          </View>
+       <ImageBackground source={require('../images/archer3.jpg')} style={styles.container}>
 
           <Animatable.View ref="view"
             style={styles.center3} >
@@ -230,7 +223,7 @@ export default class LaylaDARSHPBSSMITE extends React.Component {
                 numberOfLines={1}>{this.state.NumberHolderD8S4}</Text>
             </Animatable.View>
           </View>
-      </View>
+      </ImageBackground>
     );
   }
 }
@@ -238,13 +231,8 @@ export default class LaylaDARSHPBSSMITE extends React.Component {
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      flexDirection: 'row',
       flexWrap: 'wrap',
-      backgroundColor: '#F65BE3',
-      alignContent: 'center',
-      justifyContent: 'center',
       alignItems: 'center',
-      alignSelf: 'center',
     },
     archer1: {
       flex: 1,
@@ -317,8 +305,7 @@ const styles = StyleSheet.create({
       alignItems: 'center',
     },
     center3: {
-      height: '10%',
-      backgroundColor: '#F0C808',
+      height: '15%',
       justifyContent: 'center',
       alignContent: 'center',
       alignItems: 'center',
@@ -345,7 +332,6 @@ const styles = StyleSheet.create({
     },
     bottom3: {
       height: '57%',
-      backgroundColor: '#F0C808',
       flexDirection: 'row',
       flexWrap: 'wrap',
       padding: 2,

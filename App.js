@@ -91,22 +91,22 @@ class HomeScreen extends React.Component {
       <View style={styles.container}>
         <ScrollView style={styles.homeContainer}>
           <Text
-            onPress= { ()=> navigate('LaylaDARSH')} style={styles.onpress1} > {"\n"}DARSH{"\n"}{"\n"}{"\n"}{"\n"} <LogoTitle1 />
+            onPress= { ()=> navigate('LaylaDARSH')} >DARSH<LogoTitle1 />
           </Text>
           <Text
-            onPress= { ()=> navigate('LaylaDARSHPBS')}> {"\n"}DARSH{"\n"}PBS{"\n"}{"\n"}{"\n"} <LogoTitle2 />
+            onPress= { ()=> navigate('LaylaDARSHPBS')}>{"\n"}DARSH{"\n"}PBS{"\n"}<LogoTitle2 />
           </Text>
           <Text
-            onPress= { ()=> navigate('LaylaDARSHPBSSMITE')}> {"\n"}DARSH{"\n"}PBS{"\n"}SMITE{"\n"}{"\n"} <LogoTitle3 />
+            onPress= { ()=> navigate('LaylaDARSHPBSSMITE')}>{"\n"}DARSH{"\n"}PBS{"\n"}SMITE{"\n"}<LogoTitle3 />
           </Text>
           <Text
-            onPress= { ()=> navigate('LaylaHammer')}> {"\n"}HAMMER{"\n"}{"\n"}{"\n"}{"\n"} <LogoTitle4 />
+            onPress= { ()=> navigate('LaylaHammer')}>{"\n"}HAMMER{"\n"}<LogoTitle4 />
           </Text>
           <Text
-            onPress= { ()=> navigate('LaylaHammerHS')}> {"\n"}HAMMER{"\n"}HS{"\n"}{"\n"}{"\n"} <LogoTitle5 />
+            onPress= { ()=> navigate('LaylaHammerHS')}>{"\n"}HAMMER{"\n"}HS{"\n"}<LogoTitle5 />
           </Text>
           <Text
-            onPress= { ()=> navigate('LaylaHammerHSSmite')}> {"\n"}HAMMER{"\n"}HS{"\n"}SMITE{"\n"}{"\n"} <LogoTitle6 />
+            onPress= { ()=> navigate('LaylaHammerHSSmite')}>{"\n"}HAMMER{"\n"}HS{"\n"}SMITE{"\n"}<LogoTitle6 />
           </Text>
         </ScrollView>
       </View>

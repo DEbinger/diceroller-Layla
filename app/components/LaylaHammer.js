@@ -7,6 +7,7 @@ import {
   Alert,
   TouchableOpacity,
   Dimensions,
+  ImageBackground,
        } from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
 import { Button } from './Button';
@@ -17,13 +18,13 @@ EStyleSheet.build();
 
 export default class LaylaHammer extends React.Component {
   static navigationOptions = {
-    title: '13|8 +5',
+    title: '14|9 +5',
   };
   constructor(props) {
     super(props);
   imgClick = () => {
     Alert.alert(
-  'Column 1 Base D20 roll \n\nColumn 2 D20 \n + 13|8 \n ',
+  'Column 1 Base D20 roll \n\nColumn 2 D20 \n + 14|9 \n ',
   'Enjoy!',
   [
     {text: 'T20 = Total D20 Roll', onPress: () => console.log('D20 Roll Total')},
@@ -52,8 +53,8 @@ export default class LaylaHammer extends React.Component {
   handleButtonPress=()=> {
     let D20S1 = this.rollA20();
     let D20S2 = this.rollA20();
-    let D20TotalS1 = D20S1 + 13 ;
-    let D20TotalS2 = D20S2 + 8 ;
+    let D20TotalS1 = D20S1 + 14;
+    let D20TotalS2 = D20S2 + 9;
     let D8S1 = Math.floor(Math.random()  * 8) +5;
     let D8S2 = Math.floor(Math.random()  * 8) +5;
 
@@ -73,15 +74,7 @@ export default class LaylaHammer extends React.Component {
     const D20S1Style = this.state.NumberHolderD20S1 === 20 | this.state.NumberHolderD20S1 === 1 ? styles.bottomItemInner20picked : styles.bottomItemInner20;
     const D20S2Style = this.state.NumberHolderD20S2 === 20 | this.state.NumberHolderD20S2 === 1 ? styles.bottomItemInner20picked : styles.bottomItemInner20;
     return (
-       <View style={styles.archer1}>
-          <View style={styles.top1}>
-            <TouchableOpacity onPress={imgClick} style={styles.profileimage}>
-              <Image
-                style={styles.image}
-                source={require('../images/hammer.jpg')}
-              />
-            </TouchableOpacity>
-          </View>
+      <ImageBackground source={require('../images/hammer.jpg')} style={styles.container}>
 
           <Animatable.View ref="view"
             style={styles.center1} >
@@ -152,7 +145,7 @@ export default class LaylaHammer extends React.Component {
                 numberOfLines={1}>{this.state.NumberHolderD8S2}</Text>
             </Animatable.View>
           </View>
-      </View>
+      </ImageBackground>
     );
   }
 }
@@ -160,13 +153,8 @@ export default class LaylaHammer extends React.Component {
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      flexDirection: 'row',
       flexWrap: 'wrap',
-      backgroundColor: '#F65BE3',
-      alignContent: 'center',
-      justifyContent: 'center',
       alignItems: 'center',
-      alignSelf: 'center',
     },
     archer1: {
       flex: 1,
@@ -225,8 +213,7 @@ const styles = StyleSheet.create({
       maxWidth: '100%',
     },
     center1: {
-      height: '10%',
-      backgroundColor: '#065143',
+      height: '20%',
       justifyContent: 'center',
       alignContent: 'center',
       alignItems: 'center',
@@ -247,7 +234,6 @@ const styles = StyleSheet.create({
     },
     bottom1: {
       height: '57%',
-      backgroundColor: '#065143',
       flexDirection: 'row',
       flexWrap: 'wrap',
       padding: 2,
